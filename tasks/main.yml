@@ -73,8 +73,8 @@
 - name: Updating ruleset
   command: 'oinkmaster -C /etc/oinkmaster.conf -o /etc/suricata/rules'
   tags: update-ruleset
-  notify:
-    - restart suricata
+  # notify:
+  #   - restart suricata
 
 
 - name: Deploy scripts
@@ -96,10 +96,9 @@
     - deploy-cronjobs
 
 
-- cron: name="Add cronjob: Daily - Update oinkmaster ruleset"
-        special_time=daily
-        job=/opt/update_oinkmaster_ruleset.sh
+- cron:
+    name: "Add cronjob: Daily - Update oinkmaster ruleset"
+    special_time: daily
+    job: /opt/update_oinkmaster_ruleset.sh
   tags:
     - deploy-cronjobs
-
-

@@ -1,13 +1,11 @@
 ---
-- name: Start Suricata
+- name: start suricata
   action: shell='start suricata'
 
 
-- name: Stop Suricata
+- name: stop suricata
   action: shell='stop suricata'
 
 
-- name: Restart Suricata
+- name: restart suricata
   action: shell='restart suricata'
-
-
